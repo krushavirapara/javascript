@@ -2,7 +2,7 @@ console.log("Liine 1",varname)
 var varname =  10
 
 function b(){
-    console.log("Liine 5",varname4)
+    console.log("Liine 5",varname)
 }
 
 console.log("Liine 7",varname)
@@ -47,22 +47,22 @@ fn2()
 // Liine 34 25
 // Liine 38 25
 
-console.log("Liine 1",varname)
-var varname =  10
+// console.log("Liine 1",varname)
+// var varname =  10
 
-function b(){
-    console.log("Liine 5",varname4)
-}
+// function b(){
+//     console.log("Liine 5",varname4)
+// }
 
-console.log("Liine 7",varname)
+// console.log("Liine 7",varname)
 
-function fn(){
-    console.log("Liine 11",varname)
-    var varname4 =20
-    b()
-    console.log("Liine 13",varname)
-}
-fn()
+// function fn(){
+//     console.log("Liine 11",varname)
+//     var varname4 =20
+//     b()
+//     console.log("Liine 13",varname)
+// }
+// fn()
 //when youy do something like above then b() doesn't have access to varname4 and you will get reference error.
 
 // Scope Chain means that one variable has a scope (it may be global or local/function or block scope) is used by another variable or function having another scope (may be global or local/function or block scope).
@@ -95,3 +95,14 @@ var global_variable = 20;
     //output 
     //30
     //20
+
+var f;
+function a(){
+    b()
+    function b(){
+        console.log(f)
+    }
+}
+f=40;
+a()
+

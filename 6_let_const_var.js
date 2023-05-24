@@ -101,3 +101,8 @@ const b = {
 }
 console.log(typeof JSON.stringify(b))
 console.log(Object.toString(b))
+
+//Variables declared with var are not local to the loop, i.e. they are in the same scope the for loop is in. 
+//Variables declared with let are local to the statement.
+
+//The result of this expression is discarded.

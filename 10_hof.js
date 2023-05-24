@@ -42,6 +42,16 @@ const output = users.reduce(function(acc,curr){
 
 console.log(output) // [ 'john', 'ross' ]
 
+//or you can do the above thong using filter also
+const scenario1 = users.filter(function(x){
+    if (x["age"]>50){
+        return x
+    }
+}).map(function(x){
+    return x.firstname + x.lastname
+})
+console.log(scenario1)
+
 const scenario2 = users.reduce(function(acc,curr){
     if(acc[curr["age"]]){
         acc[curr["age"]]+=1

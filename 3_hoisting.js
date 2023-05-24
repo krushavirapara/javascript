@@ -29,8 +29,10 @@ function fn(){
 }
 fn()
 console.log(fo)
+//here typeof fo will be undefined 
 var fo = function g(){
   console.log("function expression")
 }
 fo()
+//after assignment typeof fo will be function
 console.log(typeof fo)

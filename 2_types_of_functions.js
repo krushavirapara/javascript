@@ -31,9 +31,9 @@ let newfunction = function myfunction(){
 newfunction()
 
 
-//3.annoynomus function
+//3.anonymous function
 let annonomusfunction = function (){
-  console.log("this is annonomus expression")
+  console.log("this is anonymous expression")
 }
 
 annonomusfunction()

@@ -30,3 +30,5 @@ for(let key in fn){
 }
 fn()
 fn.method()
+
+//https://javascript.info/object
