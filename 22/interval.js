@@ -1,32 +1,63 @@
-let counter =0
-function greet(){
-    counter++
-    console.log("Hello")
-    if (counter>=3){
-        clearInterval(i)
-    }
-}
-let i = setInterval(greet,2000)
-console.log("byee")
+// let counter =0
+// function greet(){
+//     counter++
+//     console.log("Hello")
+//     if (counter>=3){
+//         clearInterval(i)
+//     }
+// }
+// let i = setInterval(greet,2000)
+// console.log("byee")
 
 
-function f(){
-    function y(){
-        console.log("y")
+function createPolyfill(){
+    let intervalId = 0
+    let intervalMap ={}
+
+    function setIntervsalPolyfill(callback,delay,...args){
+        let id = intervalId++
+        function repeat(){
+            intervalMap[id] = setTimeout(()=>{
+                callback(args)
+               
+                if(intervalMap[id] ){
+                    repeat()
+                }
+            },delay)
+            
+            
+        }
+        repeat()
+        console.log(Object.keys(intervalMap))
+        return id
 
     }
-    function z(){
-        console.log("z")
-    }
+
+    function cleraIntervalPolyfill(intervalid){
+        clearTimeout(intervalMap[intervalid])
+    delete intervalMap[intervalid]
+  }
+
     return {
-        y: y,
-        z: z
+        setIntervsalPolyfill,
+        cleraIntervalPolyfill
     }
 }
 
-//  const {a,b}  = f()
-// a()
-// b()
+const {
+    setIntervsalPolyfill,
+cleraIntervalPolyfill
+} = createPolyfill()
 
-const a = f().y
-a()
+let counter = 0;
+let intervalid;
+
+function greeting() {
+  counter++;
+  if(counter >= 3) {
+    cleraIntervalPolyfill(intervalid)
+  }
+  console.log("Helloooooo....")
+}
+
+intervalid = setIntervsalPolyfill(greeting, 2000)
