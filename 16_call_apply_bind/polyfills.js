@@ -24,3 +24,5 @@ const obj1 = {
 
 
 obj1.print.myCall(obj2,"Hi");
+
+//https://medium.com/swlh/polyfills-bind-with-and-without-apply-f1e034f21262

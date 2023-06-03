@@ -10,19 +10,28 @@ function cb(err,data){
     fs.readFile('f2.txt',cb2)
     function cb2(err,data){
         console.log("content " +data)
+        fs.readFile('f3.txt',cb3)
+        function cb3(err,data){
+            console.log("content " +data)
+        }
     }
-    fs.readFile('f3.txt',cb3)
-    function cb3(err,data){
-        console.log("content " +data)
-    }
+    
+    // function xy(){
+    //     fs.readFile('f2.txt',cbp)
+    //     fs.readFile('f3.txt',cbp)
+    //     function cbp(err,data){
+    //         console.log("content " +data)
+    //     }
+    // }
+
 }
 
 //parallel
-fs.readFile('f2.txt',cbp)
-fs.readFile('f3.txt',cbp)
-function cbp(err,data){
-    console.log("content " +data)
-}
+// fs.readFile('f2.txt',cbp)
+// fs.readFile('f3.txt',cbp)
+// function cbp(err,data){
+//     console.log("content " +data)
+// }
 
 
 console.log("after")
