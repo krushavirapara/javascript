@@ -13,3 +13,11 @@ function DeductCard(){
 update.updateAccount("Tv",DeductCard)
 update.promiseupdate("Tv").then(DeductCard)
 
+//null vs undefined
+let obj = {
+    name:"k",
+
+    middle: null
+
+}
+console.log(obj.middle)
